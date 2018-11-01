@@ -37,7 +37,7 @@ public class SampleServlet extends HttpServlet {
 
 	    TestBean bean = new TestBean();
 	    bean.setFirstName("1234567890");
-	    bean.setEmail("test@dialonet");
+	    bean.setEmail("test@test");
 
 	    Cleaning c = new Cleaning(bean);
 	    try {
