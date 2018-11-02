@@ -23,12 +23,11 @@ public class Cleaning {
 			for(Annotation annotation :  field.getAnnotations()){
 				Size size = (Size)annotation;
 				PropertyDescriptor prop = new PropertyDescriptor(field.getName(), bean.getClass());
-				//Getter取得
+				//Getter
 				Method getter = prop.getReadMethod();
-				//Setter取得
+				//Setter
 				Method setter = prop.getWriteMethod();
 				String value = (String) getter.invoke(bean, (Object[]) null);
-				//クリーニング
 				if(size.max() < getSJISLength(value) ){
 					setter.invoke(bean, value.substring(0, size.max()));
 				}
